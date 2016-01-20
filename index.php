@@ -1,5 +1,5 @@
 <?php
-echo var_dump(readdir("img"));
+$images = scandir("img");
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,11 @@ echo var_dump(readdir("img"));
 </head>
 <body>
     <div>
-
+        <?php
+        foreach ($images as $image) {
+            echo "<img src='img/$image' />";
+        }
+        ?>
     </div>
 </body>
 </html>
