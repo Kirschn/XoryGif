@@ -10,7 +10,9 @@ $images = scandir("img");
     <div>
         <?php
         foreach ($images as $image) {
-            echo "<img src='img/$image' />";
+            if ($image !== "." && $image !== "..") {
+                echo "<img src='img/$image' />";
+            }
         }
         ?>
     </div>
