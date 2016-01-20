@@ -11,7 +11,7 @@ $images = scandir("img");
         <?php
         foreach ($images as $image) {
             if ($image !== "." && $image !== "..") {
-                echo "<a href='img/$image'><img src='img/$image' /></a>";
+                echo "<a href='img/$image'><img height='200px' src='img/$image' /></a>";
             }
         }
         ?>
