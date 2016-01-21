@@ -5,6 +5,15 @@ $images = scandir("img");
 <html>
 <head>
     <title>XoviGIF</title>
+    <style>
+        #githublink {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            margin: 5px;
+            font-family: Arial;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -15,6 +24,9 @@ $images = scandir("img");
             }
         }
         ?>
+    </div>
+    <div id="githublink">
+        <a href="http://github.com/Kirschn/XoviGif">GitHub</a>
     </div>
 </body>
 </html>
