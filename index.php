@@ -5,6 +5,7 @@ $images = scandir("img");
 <html>
 <head>
     <title>XoviGIF</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <style>
         #githublink {
             position: fixed;
@@ -14,19 +15,25 @@ $images = scandir("img");
             font-family: Arial;
         }
     </style>
-</head>
-<body>
-    <div>
-        <?php
-        foreach ($images as $image) {
-            if ($image !== "." && $image !== "..") {
-                echo "<a href='img/$image'><img height='200px' src='img/$image' /></a>";
-            }
+    <script>
+        var offset = 0;
+        function loadContent() {
+            $.get("images.php", function (data) {
+                $("#imagecontent").append(data);
+                offset += 10;
+            })
         }
-        ?>
+    </script>
+</head>
+<body onload="loadContent()">
+    <div id="imagecontent">
+        
     </div>
     <div id="githublink">
         <a href="http://github.com/Kirschn/XoviGif">GitHub</a>
+        <button onclick="loadContent()">
+            Load More...
+        </button>
     </div>
 </body>
 </html>
